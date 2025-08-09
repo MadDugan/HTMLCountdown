@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Clock</title>
+    <style>
+        /* Embed Orbitron font */
+        @font-face {
+            font-family: 'Orbitron';
+            font-style: normal;
+            font-weight: 700;
+            src: url(data:font/woff2;base64,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) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        :root {
+            --grid-cols: 40;
+            --grid-rows: 16;
+            --block-gap: 3px;
+            --active-color: #00ffc3;
+            --normal-color: #00ffc3;
+            --warning-color: #ffcc00;
+            --danger-color: #ff3333;
+            --inactive-color: #0d0d0d00;
+            --bg-color: #0d0d0d;
+            --old-inactive-color: #1a1a1a;
+            --animation-duration: 1.0s;
+        }
+
+        /* Basic Setup */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-color);
+            font-family: 'Orbitron', sans-serif;
+            color: var(--active-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main Grid Container */
+        #grid-container {
+            display: grid;
+            grid-template-columns: repeat(var(--grid-cols), 1fr);
+            grid-template-rows: repeat(var(--grid-rows), 1fr);
+            gap: var(--block-gap);
+            /* Adjust width to be responsive to screen height, maintaining aspect ratio */
+            height: 95vh;
+            width: calc(95vh * (var(--grid-cols) / var(--grid-rows)));
+            max-width: 95vw;
+            padding: var(--block-gap);
+            box-sizing: border-box;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        /* Individual Blocks */
+        .grid-block {
+            background-color: var(--inactive-color);
+            border-radius: 2px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        /* Active (Lit) Blocks */
+        .grid-block.active {
+            background-color: var(--active-color);
+            box-shadow: 0 0 8px var(--active-color), 0 0 15px var(--active-color);
+        }
+
+        /* Falling Animation */
+        .grid-block.falling {
+            animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+            animation-fill-mode: forwards;
+            z-index: 10;
+            position: relative;
+            background-color: color-mix(in srgb, var(--falling-color) 30%, var(--inactive-color));
+            box-shadow: 0 0 4px color-mix(in srgb, var(--falling-color) 30%, var(--inactive-color));
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: var(--fall-transform);
+                opacity: 0;
+            }
+        }
+        
+        /* Info text at the bottom */
+        #info {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="grid-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridContainer = document.getElementById('grid-container');
+            const COLS = 40;
+            const ROWS = 16;
+            const TOTAL_BLOCKS = COLS * ROWS;
+            let gridBlocks = [];
+            let lastDisplayedTotalSeconds = -1;
+            let previousActiveIndices = new Set(); // Track previous state
+
+            // --- 8x16 Digit and Symbol Patterns ---
+            const digitPatterns = {
+                '0': ['01111110','11000011','10000001','10000001','10000001','10000001','10000001','10000001','10000001','10000001','10000001','10000001','10000001','10000001','11000011','01111110'],
+                '1': ['00011000','00111000','01111000','00011000','00011000','00011000','00011000','00011000','00011000','00011000','00011000','00011000','00011000','00011000','01111110','01111110'],
+                '2': ['01111110','11000011','10000001','00000001','00000011','00000110','00001100','00011000','00110000','01100000','11000000','10000000','10000000','10000000','11111111','11111111'],
+                '3': ['01111110','11000011','10000001','00000001','00000001','00000011','00011110','00000011','00000001','00000001','10000001','10000001','10000001','10000001','11000011','01111110'],
+                '4': ['00000110','00001110','00011110','00110110','01100110','11000110','11111111','00000110','00000110','00000110','00000110','00000110','00000110','00000110','00000110','00000110'],
+                '5': ['11111111','11111111','10000000','10000000','10000000','10000000','11111110','11000011','00000001','00000001','00000001','00000001','10000001','10000001','11000011','01111110'],
+                '6': ['01111110','11000011','10000000','10000000','10000000','10000000','11111110','11000011','10000001','10000001','10000001','10000001','10000001','10000001','11000011','01111110'],
+                '7': ['11111111','11111111','00000001','00000001','00000011','00000110','00001100','00011000','00110000','00110000','01100000','01100000','01100000','01100000','01100000','01100000'],
+                '8': ['01111110','11000011','10000001','10000001','10000001','11000011','01111110','11000011','10000001','10000001','10000001','10000001','10000001','10000001','11000011','01111110'],
+                '9': ['01111110','11000011','10000001','10000001','10000001','11000011','01111111','00000001','00000001','00000001','00000001','00000001','00000001','10000001','11000011','01111110']
+            };
+            const colonPattern = ['00','00','00','11','11','11','00','00','00','00','11','11','11','00','00','00'];
+
+            /**
+             * Creates the grid of blocks on startup.
+             */
+            function createGrid() {
+                for (let i = 0; i < TOTAL_BLOCKS; i++) {
+                    const block = document.createElement('div');
+                    block.classList.add('grid-block');
+                    gridContainer.appendChild(block);
+                    gridBlocks.push(block);
+                }
+            }
+            
+            /**
+             * Animates a single block to fall apart.
+             * @param {HTMLElement} block - The block element to animate.
+             */
+            function animateSingleBlockFall(block) {
+                // Get the current active color before removing the active class
+                const computedStyle = getComputedStyle(document.documentElement);
+                const activeColor = computedStyle.getPropertyValue('--active-color').trim();
+                
+                block.classList.remove('active');
+                block.classList.add('falling');
+                // Set the falling block color to a dimmed version of active color
+                block.style.setProperty('--falling-color', activeColor);
+                
+                const randomX = (Math.random() - 0.5) * 800;
+                const randomY = Math.random() * 300 + 400;
+                const randomZ = (Math.random()) * 250;
+                const randomRotX = (Math.random() - 0.5) * 720;
+                const randomRotY = (Math.random() - 0.5) * 720;
+                const randomRotZ = (Math.random() - 0.5) * 720;
+                block.style.setProperty('--fall-transform', 
+                    `translate3d(${randomX}px, ${randomY}px, ${randomZ}px) 
+                     rotateX(${randomRotX}deg) 
+                     rotateY(${randomRotY}deg) 
+                     rotate(${randomRotZ}deg)`);
+                block.style.animationName = 'fall';
+                block.style.animationDuration = `var(--animation-duration)`;
+
+                setTimeout(() => {
+                    block.classList.remove('falling');
+                    block.style.animationName = '';
+                    block.style.animationDuration = '';
+                    block.style.removeProperty('--fall-transform');
+                    block.style.removeProperty('--falling-color');
+                }, 2000);
+            }
+
+            /**
+             * Calculates the set of grid indices for a given pattern and position.
+             * @param {Set<number>} indicesSet - The set to add indices to.
+             * @param {string[]} pattern - The character pattern for the digit/symbol.
+             * @param {number} startCol - The starting column on the main grid.
+             * @param {number} startRow - The starting row on the main grid.
+             */
+            function getPatternIndices(indicesSet, pattern, startCol, startRow) {
+                if (!pattern) return;
+                pattern.forEach((rowString, y) => {
+                    rowString.split('').forEach((char, x) => {
+                        if (char === '1') {
+                            const gridX = startCol + x;
+                            const gridY = startRow + y;
+                            if (gridX < COLS && gridY < ROWS) {
+                                const index = gridY * COLS + gridX;
+                                indicesSet.add(index);
+                            }
+                        }
+                    });
+                });
+            }
+
+            /**
+             * Calculates the complete set of active indices for a given time.
+             * @param {number} minutes - The minutes to display.
+             * @param {number} seconds - The seconds to display.
+             * @returns {Set<number>} A set of all indices that should be active.
+             */
+            function getActiveIndicesForTime(minutes, seconds) {
+                const indices = new Set();
+                const M1 = String(minutes).padStart(2, '0')[0];
+                const M2 = String(minutes).padStart(2, '0')[1];
+                const S1 = String(seconds).padStart(2, '0')[0];
+                const S2 = String(seconds).padStart(2, '0')[1];
+
+                const startColM1 = 0;
+                const startColM2 = 9;
+                const startColColon = 18;
+                const startColS1 = 21;
+                const startColS2 = 30;
+                
+                getPatternIndices(indices, digitPatterns[M1], startColM1, 0);
+                getPatternIndices(indices, digitPatterns[M2], startColM2, 0);
+                getPatternIndices(indices, colonPattern, startColColon, 0);
+                getPatternIndices(indices, digitPatterns[S1], startColS1, 0);
+                getPatternIndices(indices, digitPatterns[S2], startColS2, 0);
+
+                return indices;
+            }
+
+            /**
+             * The main update loop, called every second.
+             */
+            function updateTime() {
+                const now = new Date();
+                const totalSecondsInHour = now.getMinutes() * 60 + now.getSeconds();
+                const thirtyMinInterval = 30 * 60; // 1800 seconds
+                
+                const secondsIntoInterval = totalSecondsInHour % thirtyMinInterval;
+                const totalSecondsRemaining = thirtyMinInterval - secondsIntoInterval - 1;
+
+                if (totalSecondsRemaining !== lastDisplayedTotalSeconds) {
+                    const minutes = Math.floor(totalSecondsRemaining / 60);
+                    const seconds = totalSecondsRemaining % 60;
+
+                    // Update color based on remaining time
+                    let activeColor;
+                    let inactiveColor = 'var(--inactive-color)';
+                    if (minutes < 2) {
+                        activeColor = 'var(--danger-color)';
+                        document.documentElement.style.setProperty('--active-color', 'var(--danger-color)');
+                    } else if (minutes < 5) {
+                        activeColor = 'var(--warning-color)';
+                        document.documentElement.style.setProperty('--active-color', 'var(--warning-color)');
+                    } else {
+                        activeColor = 'var(--normal-color)';
+                        document.documentElement.style.setProperty('--active-color', 'var(--normal-color)');
+                    }
+
+                    // Update box-shadow color in the active class
+                    const styleSheet = document.styleSheets[0];
+                    for (let rule of styleSheet.cssRules) {
+                        if (rule.selectorText === '.grid-block.active') {
+                            rule.style.boxShadow = `0 0 8px ${activeColor}, 0 0 15px ${activeColor}`;
+                        }
+                    }
+                    
+                    // Get the next active indices for the current time
+                    const nextActiveIndices = getActiveIndicesForTime(minutes, seconds);
+                    
+                    // Compare previous state with next state and apply changes
+                    gridBlocks.forEach((block, index) => {
+                        const wasPreviouslyActive = previousActiveIndices.has(index);
+                        const willBeActive = nextActiveIndices.has(index);
+
+                        if (willBeActive) {
+                            // If block needs to be active, immediately reset any falling animation
+                            block.classList.remove('falling');
+                            block.style.animationName = '';
+                            block.style.animationDuration = '';
+                            block.style.removeProperty('--fall-transform');
+                            block.classList.add('active');
+                        } else if (wasPreviouslyActive) {
+                            // Only start falling animation if it was previously active
+                            animateSingleBlockFall(block);
+                            // Remove the active class to reset the block
+                            block.classList.remove('active');
+                            // Reset the box-shadow to inactive color
+                            //block.style.boxShadow = `0 0 8px ${inactiveColor}, 0 0 15px ${inactiveColor}`;
+                        }
+                    });
+
+                    // Update the previous state for next time
+                    previousActiveIndices = new Set(nextActiveIndices);
+                    lastDisplayedTotalSeconds = totalSecondsRemaining;
+                }
+            }
+
+            // --- Initialize ---
+            createGrid();
+            updateTime(); // Initial call
+            setInterval(updateTime, 1000); // Update every second
+        });
+    </script>
+</body>
+</html>
